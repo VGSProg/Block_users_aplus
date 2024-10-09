@@ -4,7 +4,7 @@
  * Users_apluss block.
  *
  * @package   block_users_aplus
- * @copyright 2017 
+ * @copyright 2024
  * @license   
  */
 
@@ -46,13 +46,22 @@ class block_users_aplus extends block_base {
             return $this->content;
         }
 
+        $demo_data = ['users' => [
+            array('id'=>0, 'icon'=>false, 'icon_txt'=>'DF', 'name'=>'Dddddddd Fffffffff', 'grade'=>'10'),
+            array('id'=>1, 'icon'=>false, 'icon_txt'=>'DF', 'name'=>'Dddddddd Fffffffff', 'grade'=>'10'),
+            array('id'=>2, 'icon'=>false, 'icon_txt'=>'DF', 'name'=>'Dddddddd Fffffffff', 'grade'=>'10'),
+            array('id'=>3, 'icon'=>'#', 'icon_txt'=>false, 'name'=>'Dddddddd Fffffffff', 'grade'=>'10'),
+            ]];
+
+        $renderable = new \block_users_aplus\output\main($demo_data);
+        $renderer = $this->page->get_renderer('block_users_aplus');
+
         $this->content = new stdClass;
-        $this->content->text = 'text';
-        $this->content->footer = 'footer';
+        $this->content->text = $renderer->render($renderable);
+        $this->content->footer = '';
 
         return $this->content;
     }
-
 
     /**
      * Header block show or hide
