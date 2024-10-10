@@ -1,0 +1,12 @@
+<div class="block_users_aplus user_info">
+    {{< block_users_aplus/user_top }}{{/ block_users_aplus/user_top}}
+    <div class="add_garde_btn" onclick="window.block_users_aplus_add_user_grade()">+</div>
+    <div class="list">
+        {{#user.grades}}
+            <div class="line">
+                <div class="date">{{date}}</div>
+                <div class="grade">{{grade}}</div>
+            </div>
+        {{/user.grades}}
+    </div>
+</div>

@@ -1,6 +1,6 @@
-<div class="block_users_aplus block_users">
+<div class="block_users_aplus users_list">
     {{#users}}
-    <div class="line" onclick="window.block_users_aplus_user_info(0)">
+    <div class="line" onclick="window.block_users_aplus_user_info({{id}})">
         <div class="icon"><div>{{#icon}}<img src="{{icon}}">{{/icon}}{{#icon_txt}}{{icon_txt}}{{/icon_txt}}</div></div>
         <div class="name">{{name}}</div>
         <div class="grade">{{grade}}</div>

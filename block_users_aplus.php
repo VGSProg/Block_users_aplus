@@ -10,6 +10,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+use block_users_aplus\controller;
+
 class block_users_aplus extends block_base {
 
     /**
@@ -46,14 +48,7 @@ class block_users_aplus extends block_base {
             return $this->content;
         }
 
-        $demo_data = ['users' => [
-            array('id'=>0, 'icon'=>false, 'icon_txt'=>'DF', 'name'=>'Dddddddd Fffffffff', 'grade'=>'10'),
-            array('id'=>1, 'icon'=>false, 'icon_txt'=>'DF', 'name'=>'Dddddddd Fffffffff', 'grade'=>'10'),
-            array('id'=>2, 'icon'=>false, 'icon_txt'=>'DF', 'name'=>'Dddddddd Fffffffff', 'grade'=>'10'),
-            array('id'=>3, 'icon'=>'#', 'icon_txt'=>false, 'name'=>'Dddddddd Fffffffff', 'grade'=>'10'),
-            ]];
-
-        $renderable = new \block_users_aplus\output\main($demo_data);
+        $renderable = new \block_users_aplus\output\main(controller::getInstance('get_users_list')->execute(0));
         $renderer = $this->page->get_renderer('block_users_aplus');
 
         $this->content = new stdClass;
@@ -61,6 +56,14 @@ class block_users_aplus extends block_base {
         $this->content->footer = '';
 
         return $this->content;
+    }
+
+    function get_required_javascript() {
+        global $CFG;
+        
+        //$code = file_get_contents($CFG->dirroot.'/blocks/users_aplus/amd/src/base.js');
+        //$this->page->requires->js_init_code($code , true);
+        $this->page->requires->js_call_amd('block_users_aplus/base', 'init');
     }
 
     /**
