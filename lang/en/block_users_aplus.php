@@ -9,3 +9,4 @@
  */
 
 $string['pluginname'] = 'Users A+';
+$string['user_info_grades_no_list'] = 'grade list is empty';

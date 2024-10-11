@@ -22,7 +22,8 @@
 }
 
 
-
+.block_users_aplus .users_list{
+}
 .block_users_aplus .users_list .line{
 	position: relative;
 	background: #f5f5f5;
@@ -166,6 +167,12 @@
     line-height: 28px;
     border-radius: 6px;
     text-align: center;
+}
+
+.block_users_aplus .user_info .no_list{
+	text-align: center;
+	color: rgb(134, 134, 134);
+	padding: 40px 0;
 }
 .block_users_aplus .user_info .list{
     width: 100%;

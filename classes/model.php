@@ -77,9 +77,10 @@ class model {
 
         $grades = $DB->get_records('block_users_aplus_grades', ['userid' => $user_id], 'timecreated DESC', 'id, grade, timecreated');
         
-        $grades_data = null;
+        $grades_data = [];
+        $grades_exist = false;
         if(count($grades) > 0){
-            $grades_data = [];
+            $grades_exist = true;
             foreach ($grades as $grade){
                 array_push($grades_data, ['date'=>userdate($grade->timecreated,'%d.%m.%Y'), 'grade' => $grade->grade]);
             }
@@ -91,7 +92,9 @@ class model {
             'icon_txt' => $icon_txt, 
             'name' => $user->firstname.' '.$user->lastname,
             'url_profile' => $url_profile,
-            'grades' => $grades_data,
+            'no_list_txt' => get_string('user_info_grades_no_list', 'block_users_aplus'),
+            'grades' => $grades_exist,
+            'grades_items' => $grades_data,
         ]];
         return $demo_data;
     }

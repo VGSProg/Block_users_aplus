@@ -126,7 +126,9 @@ class block_users_aplus_external extends core_course_external {
                 'icon_txt' => new external_value(PARAM_TEXT, ''),
                 'name' => new external_value(PARAM_TEXT, ''),
                 'url_profile' => new external_value(PARAM_TEXT, ''),
-                'grades' => new external_multiple_structure(new external_single_structure([
+                'no_list_txt' => new external_value(PARAM_TEXT, ''),
+                'grades' => new external_value(PARAM_BOOL, ''),
+                'grades_items' => new external_multiple_structure(new external_single_structure([
                     'date' => new external_value(PARAM_TEXT, ''),
                     'grade' => new external_value(PARAM_INT, ''),
                 ]))
