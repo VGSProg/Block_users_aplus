@@ -3,7 +3,7 @@
     <div class="line" onclick="window.block_users_aplus_user_info({{id}})">
         <div class="icon"><div>{{#icon}}<img src="{{icon}}">{{/icon}}{{#icon_txt}}{{icon_txt}}{{/icon_txt}}</div></div>
         <div class="name">{{name}}</div>
-        <div class="grade">{{grade}}</div>
+        {{#grade}}<div class="grade">{{grade}}</div>{{/grade}}
     </div>
     {{/users}}
 </div>

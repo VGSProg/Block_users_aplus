@@ -59,6 +59,11 @@
 	color: #5c9ffd;
 	text-align: center;
 }
+.block_users_aplus .users_list .line .icon div img{
+	width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
 .block_users_aplus .users_list .line:nth-child(2n) .icon div{
 	border: 2px solid #e4eefb;
 }
@@ -139,6 +144,11 @@
     color: #5c9ffd;
     text-align: center;
     margin: 0 auto;
+}
+.block_users_aplus .user_info .icon div img, .block_users_aplus .user_add_grade .icon div img{
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
 }
 .block_users_aplus .user_info .name, .block_users_aplus .user_add_grade .name{
     width: 100%;
