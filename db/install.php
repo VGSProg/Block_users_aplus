@@ -15,10 +15,5 @@ defined('MOODLE_INTERNAL') || die();
   * when it is installed.
   */
 function xmldb_block_users_aplus_install() {
-    global $DB;
-
-    $count_users = $DB->count_records('user');
-    if($count_users < 5){
-
-    }
+    
 }
