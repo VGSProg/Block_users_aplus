@@ -15,7 +15,7 @@ if ($ADMIN->fulltree) {
 
     $setting = new admin_setting_configcheckbox('block_users_aplus_load_demo_users',
             get_string('admin_setting_demo_users', 'block_users_aplus'),
-            get_string('admin_setting_demo_users_desc', 'block_users_aplus'), 1);
+            get_string('admin_setting_demo_users_desc', 'block_users_aplus'), 0);
     $setting->set_updatedcallback(function(){
         global $CFG;
 
